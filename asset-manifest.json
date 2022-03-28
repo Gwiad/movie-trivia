@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/movie-trivia/static/css/main.c6bebc4e.css",
-    "main.js": "/movie-trivia/static/js/main.c2ce8b3e.js",
+    "main.js": "/movie-trivia/static/js/main.d078b017.js",
     "index.html": "/movie-trivia/index.html",
     "main.c6bebc4e.css.map": "/movie-trivia/static/css/main.c6bebc4e.css.map",
-    "main.c2ce8b3e.js.map": "/movie-trivia/static/js/main.c2ce8b3e.js.map"
+    "main.d078b017.js.map": "/movie-trivia/static/js/main.d078b017.js.map"
   },
   "entrypoints": [
     "static/css/main.c6bebc4e.css",
-    "static/js/main.c2ce8b3e.js"
+    "static/js/main.d078b017.js"
   ]
 }
