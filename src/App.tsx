@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import HomePage from 'components/HomePage';
 import Question from 'components/Question';
 import GameOver from 'components/GameOver';
+import {useSelector} from 'react-redux';
+import {RootState} from 'app/store';
 
 const OuterContainer = styled.div`
   width: 100vw;
@@ -14,13 +16,26 @@ const OuterContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #d0f0c033;
+  position: relative;
 `;
 const InnerContainer = styled.div`
   width: 300px;
   height: 600px;
 `;
-
+const ScoreContainer = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: left;
+  width: 150px;
+`;
+const Text = styled.p`
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+`;
 function App() {
+  const currentScore = useSelector((state: RootState) => state.currentScore);
   return (
     <OuterContainer>
       <InnerContainer>
@@ -34,6 +49,9 @@ function App() {
           </Routes>
         </BrowserRouter>
       </InnerContainer>
+      <ScoreContainer>
+        <Text>current score: {currentScore}</Text>
+      </ScoreContainer>
     </OuterContainer>
   );
 }
