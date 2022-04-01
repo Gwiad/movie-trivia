@@ -1,0 +1,51 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "object-shorthand": ["warn", "always"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/prefer-default-export": "off",
+    "import/resolver": {
+      "node": {},
+      "babel-module": {
+        "root": ["./src"],
+        "allowExistingDirectories": true
+      },
+      "typescript": {}
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
