@@ -45,7 +45,7 @@ const HomePage = () => {
 
   const handleClick = () => {
     dispatch({type: START_TIMER});
-    navigate('/play');
+    navigate('/play/0');
   };
   return (
     <Container>

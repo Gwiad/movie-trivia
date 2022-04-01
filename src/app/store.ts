@@ -9,12 +9,14 @@ import {
 import createSagaMiddleware from 'redux-saga';
 import moviesReducer, {moviesSaga} from 'features/movies/movies.slice';
 import timerReducer from 'features/timer/timer.slice';
+import questionsReducer from 'features/questions/questions.slice';
 import currentScoreReducer from '../features/currentScore/currentScore.slice';
 
 const rootReducer = combineReducers({
   currentScore: currentScoreReducer,
   timer: timerReducer,
   movies: moviesReducer,
+  questions: questionsReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

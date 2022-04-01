@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from 'app/store';
 import styled from 'styled-components';
 import HomePage from 'components/HomePage';
+import Question from 'components/Question';
 
 const OuterContainer = styled.div`
   width: 100vw;
@@ -35,8 +36,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/play/:questionId">play</Route>
-            <Route path="/gameOver">game over </Route>
+            <Route path="/play/:questionId" element={<Question />} />
+            <Route path="/gameover">game over </Route>
             <Route path="/error">error</Route>
             <Route>lost in 404</Route>
           </Routes>

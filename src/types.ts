@@ -9,3 +9,8 @@ export type Movie = {
   imDbRating: string;
   imDbRatingCount: string;
 };
+
+export type QuestionT = {
+  question: string;
+  answer: boolean;
+};
