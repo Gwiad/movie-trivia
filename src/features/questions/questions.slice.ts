@@ -35,7 +35,7 @@ function generateQuestionsFromMovies(movies: Movie[]) {
     const crewArrayRaw = crewString.split(', ');
     const crewArray = crewArrayRaw.filter(Boolean);
     const randomIndex = Math.floor(Math.random() * crewArray.length);
-    const question = `Did ${crewArray[randomIndex]} play in ${movie.fullTitle}?`;
+    const question = `Did ${crewArray[randomIndex]} directed or played in ${movie.fullTitle}?`;
     questions.push({question, answer});
   });
   localStorage.setItem('questions', JSON.stringify(questions));
