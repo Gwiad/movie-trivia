@@ -2,12 +2,10 @@ import React from 'react';
 import './App.css';
 import {Route, Routes} from 'react-router';
 import {BrowserRouter} from 'react-router-dom';
-import {FETCH_MOVIES, MovieStateI} from 'features/movies/movies.slice';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from 'app/store';
 import styled from 'styled-components';
 import HomePage from 'components/HomePage';
 import Question from 'components/Question';
+import GameOver from 'components/GameOver';
 
 const OuterContainer = styled.div`
   width: 100vw;
@@ -23,13 +21,6 @@ const InnerContainer = styled.div`
 `;
 
 function App() {
-  const movies: MovieStateI = useSelector((state: RootState) => state.movies);
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    if (!movies.error && !movies.loading && movies.movies.length < 1) {
-      dispatch({type: FETCH_MOVIES});
-    }
-  });
   return (
     <OuterContainer>
       <InnerContainer>
@@ -37,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/play/:questionId" element={<Question />} />
-            <Route path="/gameover">game over </Route>
+            <Route path="/gameover" element={<GameOver />} />
             <Route path="/error">error</Route>
             <Route>lost in 404</Route>
           </Routes>

@@ -32,20 +32,20 @@ function generateQuestionsFromMovies(movies: Movie[]) {
         : movies[index - 1].crew.replace(' (dir.)', ', ');
       answer = false;
     }
-    const crewArray = crewString.split(', ');
+    const crewArrayRaw = crewString.split(', ');
+    const crewArray = crewArrayRaw.filter(Boolean);
     const randomIndex = Math.floor(Math.random() * crewArray.length);
     const question = `Did ${crewArray[randomIndex]} play in ${movie.fullTitle}?`;
     questions.push({question, answer});
   });
-  // quick and dirty shuffle
-  return questions.sort(() => 0.5 - Math.random());
   localStorage.setItem('questions', JSON.stringify(questions));
+  return questions;
 }
 
 export default function questionsReducer(state = [], action: AnyAction) {
   if (action.type === GENERATE_QUESTIONS) {
     const questions = generateQuestionsFromMovies(action.payload);
-    return questions;
+    return questions.sort(() => Math.random() - Math.random());
   }
   return state;
 }

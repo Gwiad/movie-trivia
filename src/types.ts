@@ -14,3 +14,7 @@ export type QuestionT = {
   question: string;
   answer: boolean;
 };
+
+export type PlayButtonT = {
+  title: string;
+};
