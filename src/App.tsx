@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Route, Routes} from 'react-router';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import HomePage from 'components/HomePage';
 import Question from 'components/Question';
@@ -39,7 +39,7 @@ function App() {
   return (
     <OuterContainer>
       <InnerContainer>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/play/:questionId" element={<Question />} />
@@ -47,7 +47,7 @@ function App() {
             <Route path="/error">error</Route>
             <Route>lost in 404</Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </InnerContainer>
       <ScoreContainer>
         <Text>current score: {currentScore}</Text>
