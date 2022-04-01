@@ -1,11 +1,17 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import {ThunkAction, Action, combineReducers, createStore} from '@reduxjs/toolkit';
+import timerReducer from 'features/timer/timer.slice';
+import currentScoreReducer from '../features/currentScore/currentScore.slice';
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+const rootReducer = combineReducers({
+  currentScore: currentScoreReducer,
+  timer: timerReducer,
 });
+
+/* eslint-disable no-underscore-dangle */
+export const store = createStore(
+  rootReducer,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
