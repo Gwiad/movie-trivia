@@ -1,17 +1,21 @@
 {
   "extends": [
     "airbnb",
+    "airbnb-typescript",
     "airbnb/hooks",
     "prettier",
     "plugin:@typescript-eslint/recommended"
   ],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
   "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
+    "default-param-last": "off",
+    "@typescript-eslint/default-param-last": "off",
+    "no-param-reassign": "off",
+    "@typescript-eslint/no-use-before-define": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx", ".ts", ".tsx"]}],
     "@typescript-eslint/ban-types": [
       "error",
       {
