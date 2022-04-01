@@ -18,14 +18,14 @@ const Container = styled.div`
 
 const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 `;
 
 const Button = styled.button`
-  width: 200px;
-  height: 80px;
+  width: 120px;
+  height: 60px;
   border-radius: 50px;
   background: #013220;
   color: #d0f0c0;
@@ -60,13 +60,15 @@ const Question = () => {
 
   return (
     <Container>
-      <Text>{question.question}</Text>
+      <div style={{height: '200px'}}>
+        <Text>{question.question}</Text>
+      </div>
       <ButtonsContainer>
         <Button onClick={() => handleClick(true)}>
-          <Text>TRUE</Text>
+          <Text>YES</Text>
         </Button>
         <Button onClick={() => handleClick(false)}>
-          <Text>FALSE</Text>
+          <Text>NO</Text>
         </Button>
       </ButtonsContainer>
     </Container>

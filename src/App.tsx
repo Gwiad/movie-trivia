@@ -13,11 +13,11 @@ const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #d0f0c033;
 `;
 const InnerContainer = styled.div`
   width: 300px;
   height: 600px;
-  border: 2px solid black;
 `;
 
 function App() {

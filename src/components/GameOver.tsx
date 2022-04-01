@@ -23,9 +23,11 @@ const GameOver = () => {
 
   return (
     <Container>
-      <Text>Game Over!</Text>
-      <Text>You scored {currentScore} points!</Text>
-      <div style={{margin: '30px'}}>
+      <div style={{height: '200px'}}>
+        <Text>Game Over!</Text>
+        <Text>You scored {currentScore} points!</Text>
+      </div>
+      <div>
         <PlayButton title="PLAY AGAIN" />
       </div>
     </Container>
